@@ -10,9 +10,9 @@ JDK 17
 
 -   extract apache-tomcat-10.1.33.zip using your favorite tool
 
--   Go inside apache-tomcat-10.1.33 
+-   Go inside apache-tomcat-10.1.33 to access managment console
   - go to conf directory and modify tomcat-user.xml with following
-  - Here user tomcat with password can login to see 
+  - Add the tomcat user with  password and role 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <tomcat-users xmlns="http://tomcat.apache.org/xml"
@@ -31,6 +31,8 @@ JDK 17
 </tomcat-users>
 
 ```
+- Got to http://localhost:8080/management to see installed applicaitons
+  
 ### Apache Maven
 - Got to https://maven.apache.org/download.cgi
 - Download this file 	apache-maven-3.9.9-bin.zip or the first zip file to a preferred location
