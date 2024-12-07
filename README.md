@@ -4,7 +4,7 @@ JDK 17
 
 - Download tomcat from https://tomcat.apache.org/download-10.cgi
 
--   Download the zip version to a preferred folder
+-   Download the apache-tomcat-10.1.33.zip version to a preferred folder
 
 -   go to the downloaded location
 
