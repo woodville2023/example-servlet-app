@@ -1,15 +1,19 @@
 JDK 17
-Download tomcat from https://tomcat.apache.org/download-10.cgi
-Download the zip version to a preferred folder
 
-go to the downloaded location
-extract apache-tomcat-10.1.33.zip using your favorite tool
+###TOMCAT setup
 
-Go inside apache-tomcat-10.1.33 
+- Download tomcat from https://tomcat.apache.org/download-10.cgi
+
+-   Download the zip version to a preferred folder
+
+-   go to the downloaded location
+
+-   extract apache-tomcat-10.1.33.zip using your favorite tool
+
+-   Go inside apache-tomcat-10.1.33 
+  - go to conf directory and modify tomcat-user.xml with following
+  - Here user tomcat with password can login to see 
 ```
-cd apache-tomcat-10.1.33 
-modify conf/tomcat-user.xml
-replace this file content with  following
 <?xml version="1.0" encoding="UTF-8"?>
 <tomcat-users xmlns="http://tomcat.apache.org/xml"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -27,18 +31,29 @@ replace this file content with  following
 </tomcat-users>
 
 ```
+### Apache Maven
+- Got to https://maven.apache.org/download.cgi
+- Download this file 	apache-maven-3.9.9-bin.zip or the first zip file to a preferred location
+- go inside the downloaded directory 
+- unzip apache-maven-3.9.9-bin.zip
+- change directory to apache-maven-3.9.9-bin
+- remember the full path of where you have the apache-maven-3.9.9-bin
+- My full path where the maven is in this directory /private/tmp/apache-maven-3.9.9
 
-Download apache maven to a preferred location
-Download this file 	apache-maven-3.9.9-bin.zip or the first zip file to a preferred location
-go inside the downloaded directory 
-unzip apache-maven-3.9.9-bin.zip
-change directory to apache-maven-3.9.9-bin
-remember the full path of where you have the apache-maven-3.9.9-bin
-My full path where the maven is in this directory
-/private/tmp/apache-maven-3.9.9
-
-set path variable
+- set path variable
+  - in Mac add path variable in one of the profile files ~/.zshrc,~/.bashrc
 
 
-export PATH="/private/tmp/apache-maven-3.9.9/bin:$PATH" in one of the profile files
-in windows this will be different
+      ```
+      export PATH="/private/tmp/apache-maven-3.9.9/bin:$PATH" 
+      
+      ```
+  - in Windows using system environment to point to MAVEN_DIR/bin for PATH  
+
+##BUILD and DEPLOY
+- Go to test-app directory
+- run ```mvn clean install```
+- go to target directory
+- copy the test-app.war to TOMCAT_DIR/webapps/
+- go the browser , go to http://localhost:8080/test-app/first
+- 
